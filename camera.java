@@ -26,7 +26,7 @@ public class camera {
 		}
 		if (Game.background.height - Game.frameheight > this.y) {
 			if (movement == "down") {
-				speedY += 1;
+				speedY += 2;
 			}
 		}
 		if (Game.tora.bigTreasure == true && counter < 100) {
@@ -34,10 +34,14 @@ public class camera {
 			counter++;
 		}
 		if (movement == "up" && counter == 100) {
-			speedY -= 2;
+			speedY -= 3;
 		}
 		if (this.y <= 0 && Game.tora.bigTreasure) {
 			movement = "stop";
+		}
+		if (Game.tora.health <= 0) {
+			movement = "dead";
+			Game.gameStatus = "lost";
 		}
 		if (movement == "stop") {
 			Game.tora.y -= 4;
