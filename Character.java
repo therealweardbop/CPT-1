@@ -23,16 +23,20 @@ public class Character {
 	int speedX = 0;
 	int speedY = 0;
 	String src = "Red.png";
+	String type = "blank";
 	int counter = 0;
 	String lastDir = "up";
 	boolean bigTreasure = false;
+	int health = 10;
+	int invincible = 0;
 
-	public Character(int x, int y, int width, int height, String src) {
+	public Character(int x, int y, int width, int height, String src, String type) {
 		this.src = src;
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.type = type;
 	}
 
 	public void setSource(String source) {
@@ -53,10 +57,26 @@ public class Character {
 	}
 
 	public void animate() {
+		if (this.type == "character") {
+			if (this.invincible % 10 > 7) {
+				this.src = "yellow.png";
+			} else {
+				this.src = "tora1.png";
+			}
+		}
+	}
 
+	public void loseHealth(int healthAmount, int invincibleAmount) {
+		if (this.invincible == 0) {
+			this.health -= healthAmount;
+			this.invincible += invincibleAmount;
+		}
 	}
 
 	public void update() {
+		if (this.invincible > 0) {
+			this.invincible--;
+		}
 		if (this.y + this.height > Game.frameheight) {
 			this.y = Game.frameheight - this.height;
 		}
@@ -90,10 +110,10 @@ public class Character {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT && xdir == "right") {
 			xkey = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP && ydir == "up"){
+		if (e.getKeyCode() == KeyEvent.VK_UP && ydir == "up") {
 			ykey = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN && ydir == "down"){
+		if (e.getKeyCode() == KeyEvent.VK_DOWN && ydir == "down") {
 			ykey = false;
 		}
 	}
@@ -103,22 +123,22 @@ public class Character {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT && left == true) {
 				xkey = true;
 				xdir = "left";
-				speedX = -2;
+				speedX = -3;
 			}
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT && right == true) {
 				xkey = true;
 				xdir = "right";
-				speedX = 2;
+				speedX = 3;
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP && up == true) {
 				ykey = true;
 				ydir = "up";
-				speedY = -2;
+				speedY = -3;
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN && down == true) {
 				ykey = true;
 				ydir = "down";
-				speedY = 2;
+				speedY = 3;
 			}
 		}
 	}
