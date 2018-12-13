@@ -20,13 +20,14 @@ import java.util.Scanner;
 public class Game extends JPanel {
 	static int framewidth = 512 + 240;
 	static int frameheight = 480;
-	static Character background = new Character(0, 0, 512, 4192, "background.png");
-	static Character tora = new Character(100, 30, 32, 32, "tora1.png");
-	static Character ui = new Character(512, 0, 240, 480, "red.png");
+	static Character background = new Character(0, 0, 512, 4192, "background.png","blank");
+	static Character tora = new Character(100, 30, 32, 32, "tora1.png","character");
+	static Character ui = new Character(512, 0, 240, 480, "red.png","blank");
 	static LinkedList<Character> collectedTreasure = new LinkedList<Character>();
-	static Character bigChest = new Character(600,200,64,64,"");
+	static Character bigChest = new Character(600,200,64,64,"","blank");
 	String maptype;
 	static int collectedTreasures = 0;
+	static String gameStatus = "playing";
 	static LinkedList<Obstacle> obstacles = new LinkedList<Obstacle>();
 	static LinkedList<Item> treasures = new LinkedList<Item>();
 
@@ -96,6 +97,10 @@ public class Game extends JPanel {
 			collectedTreasure.get(i).paint(g2d);
 		}
 		bigChest.paint(g2d);
+		g.setColor(Color.blue);
+		g.fillRect(600, 50, tora.health*10,10);
+		g.setColor(Color.black);
+		g.fillRect(600+tora.health*10,50,(10-tora.health)*10,10);
 	}
 
 	public static void main(String[] args) throws InterruptedException {
@@ -117,7 +122,7 @@ public class Game extends JPanel {
 		Map.createMap();
 		System.out.print(frame.getContentPane().getSize());
 		Thread.sleep(1000);
-		while (true) {
+		while (gameStatus == "playing") {
 			game.move();
 			tora.up = true;
 			tora.down = true;
