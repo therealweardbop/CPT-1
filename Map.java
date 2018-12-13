@@ -27,6 +27,7 @@ public class Map {
 		layouts[0].add(new Obstacle(192, 32, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(224, 0, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(224, 32, 32, 32, "wall.png" , "wall"));
+		layouts[0].add(new Obstacle(150,30,40,20, "red.png","movingenemy"));
 
 		layouts[0].add(new Obstacle(64, 192, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(64, 224, 32, 32, "wall.png" , "wall"));
@@ -34,7 +35,7 @@ public class Map {
 		layouts[0].add(new Obstacle(96, 192, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(96, 224, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(96, 256, 32, 32, "wall.png" , "wall"));
-
+		
 		layouts[0].add(new Obstacle(416, 192, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(416, 224, 32, 32, "wall.png" , "wall"));
 		layouts[0].add(new Obstacle(416, 256, 32, 32, "wall.png" , "wall"));
@@ -49,7 +50,8 @@ public class Map {
 		layouts[1].add(new Obstacle(32, 192, 32, 32, "wall.png" , "wall"));
 		layouts[1].add(new Obstacle(32, 224, 32, 32, "wall.png" , "wall"));
 		layouts[1].add(new Obstacle(32, 256, 32, 32, "wall.png" , "wall"));
-
+		layouts[1].add(new Obstacle(20,185,40,20, "red.png","movingenemy"));
+		
 		layouts[1].add(new Obstacle(480, 192, 32, 32, "wall.png" , "wall"));
 		layouts[1].add(new Obstacle(480, 224, 32, 32, "wall.png" , "wall"));
 		layouts[1].add(new Obstacle(480, 256, 32, 32, "wall.png" , "wall"));
@@ -64,7 +66,8 @@ public class Map {
 		layouts[2].add(new Obstacle(480, 192, 32, 32, "wall.png" , "wall"));
 		layouts[2].add(new Obstacle(480, 224, 32, 32, "wall.png" , "wall"));
 		layouts[2].add(new Obstacle(480, 256, 32, 32, "wall.png" , "wall"));
-
+		layouts[2].add(new Obstacle(390,248,40,20, "red.png","movingenemy"));
+		
 		layouts[2].add(new Obstacle(256, 160, 32, 32, "wall.png" , "wall"));
 		layouts[2].add(new Obstacle(256, 192, 32, 32, "wall.png" , "wall"));
 		layouts[2].add(new Obstacle(256, 224, 32, 32, "wall.png" , "wall"));
@@ -77,7 +80,8 @@ public class Map {
 		layouts[3].add(new Obstacle(256, 0, 32, 32, "wall.png" , "wall"));
 		layouts[3].add(new Obstacle(224, 32, 32, 32, "wall.png" , "wall"));
 		layouts[3].add(new Obstacle(224, 0, 32, 32, "wall.png" , "wall"));
-
+		layouts[3].add(new Obstacle(210,0,40,20, "red.png","movingenemy"));
+		
 		layouts[3].add(new Obstacle(96, 256, 32, 32, "wall.png" , "wall"));
 		layouts[3].add(new Obstacle(96, 224, 32, 32, "wall.png" , "wall"));
 		layouts[3].add(new Obstacle(128, 256, 32, 32, "wall.png" , "wall"));
