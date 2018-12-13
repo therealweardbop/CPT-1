@@ -67,12 +67,18 @@ public class Obstacle {
 						Game.tora.up = false;
 						Game.tora.loseHealth(1,100);
 					}
+					if (this.type == "Enemy") {
+						Game.tora.loseHealth(1,100);
+					}
 				}
 				if (Game.tora.y + Game.Camera.y <= this.y + this.height - 10
 						&& Game.tora.y + Game.Camera.y + Game.tora.height >= this.y + 2) {
 					if (this.src == "wall.png") {
 						Game.tora.y -= 2;
 						Game.tora.down = false;
+						Game.tora.loseHealth(1,100);
+					}
+					if (this.type == "Enemy") {
 						Game.tora.loseHealth(1,100);
 					}
 				}
@@ -86,12 +92,18 @@ public class Obstacle {
 						Game.tora.left = false;
 						Game.tora.loseHealth(1,100);
 					}
+					if (this.type == "Enemy") {
+						Game.tora.loseHealth(1,100);
+					}
 				}
 				if (Game.tora.x + Game.Camera.x <= this.x + this.width - 10
 						&& Game.tora.x + Game.Camera.x + Game.tora.width >= this.x + 2) {
 					if (this.src == "wall.png") {
 						Game.tora.x -= 2;
 						Game.tora.right = false;
+						Game.tora.loseHealth(1,100);
+					}
+					if (this.type == "Enemy") {
 						Game.tora.loseHealth(1,100);
 					}
 				}
