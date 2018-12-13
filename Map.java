@@ -19,6 +19,7 @@ public class Map {
 
 		LinkedList<Obstacle>[] layouts = new LinkedList[5];
 		Item[] chestlayout = new Item[5];
+		Obstacle[] enemies = new Obstacle[5];
 		for (int i = 0; i < layouts.length; i++) {
 			layouts[i] = new LinkedList<Obstacle>();
 		}
