@@ -57,33 +57,45 @@ public class Obstacle {
 		} else {
 			counter++;
 		}
-		if (this.src == "wall.png") {
+		//if (this.src == "wall.png") {
 			if (Game.tora.x + Game.Camera.x < this.x + this.width - 3
 					&& Game.tora.x + Game.tora.width + Game.Camera.x > this.x + 3) {
 				if (Game.tora.y + Game.Camera.y <= this.y + this.height - 2
 						&& Game.tora.y + Game.tora.height + Game.Camera.y >= this.y + 10) {
-					Game.tora.y += 2;
-					Game.tora.up = false;
+					if (this.src == "wall.png") {
+						Game.tora.y += 2;
+						Game.tora.up = false;
+						Game.tora.loseHealth(1,100);
+					}
 				}
 				if (Game.tora.y + Game.Camera.y <= this.y + this.height - 10
 						&& Game.tora.y + Game.Camera.y + Game.tora.height >= this.y + 2) {
-					Game.tora.y -= 2;
-					Game.tora.down = false;
+					if (this.src == "wall.png") {
+						Game.tora.y -= 2;
+						Game.tora.down = false;
+						Game.tora.loseHealth(1,100);
+					}
 				}
 			}
 			if (Game.tora.y + Game.Camera.y < this.y + this.height - 3
 					&& Game.tora.y + Game.tora.height + Game.Camera.y > this.y + 3) {
 				if (Game.tora.x + Game.Camera.x <= this.x + this.width - 2
 						&& Game.tora.x + Game.Camera.x + Game.tora.width >= this.x + 10) {
-					Game.tora.x += 2;
-					Game.tora.left = false;
+					if (this.src == "wall.png") {
+						Game.tora.x += 2;
+						Game.tora.left = false;
+						Game.tora.loseHealth(1,100);
+					}
 				}
 				if (Game.tora.x + Game.Camera.x <= this.x + this.width - 10
 						&& Game.tora.x + Game.Camera.x + Game.tora.width >= this.x + 2) {
-					Game.tora.x -= 2;
-					Game.tora.right = false;
+					if (this.src == "wall.png") {
+						Game.tora.x -= 2;
+						Game.tora.right = false;
+						Game.tora.loseHealth(1,100);
+					}
 				}
-			}
+	//		}
 		}
 	}
 
