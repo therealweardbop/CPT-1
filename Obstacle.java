@@ -16,15 +16,17 @@ public class Obstacle {
 	int speedX = 0;
 	int speedY = 0;
 	String src = "Red.png";
+	String type = "blank";
 	int counter = 0;
 	String lastDir = "up";
 
-	public Obstacle(int x, int y, int width, int height, String src) {
+	public Obstacle(int x, int y, int width, int height, String src, String type) {
 		this.src = src;
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.type = type;
 	}
 
 	public void setSource(String source) {
