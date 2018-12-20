@@ -40,7 +40,7 @@ public class Item {
 			if (this.type == "smallTreasure") {
 				Game.treasures.remove(this);
 				Game.collectedTreasure.add(new Character((Game.collectedTreasures % 2) * 34 + 599,
-						(Game.collectedTreasures - Game.collectedTreasures % 2) * 17 + 266, 32, 32, "yellow.png"));
+						(Game.collectedTreasures - Game.collectedTreasures % 2) * 17 + 266, 32, 32, "yellow.png","blank"));
 				Game.collectedTreasures++;
 				System.out.println("item!");
 			}
