@@ -32,6 +32,10 @@ public class camera {
 		if (Game.tora.bigTreasure == true && counter < 100) {
 			movement = "up";
 			counter++;
+			if(counter == 100) {
+				Game.bgm.close();
+				Game.playSound("TigerTigerUp.wav", "bgm");
+			}
 		}
 		if (movement == "up" && counter == 100) {
 			speedY -= 3;
@@ -45,6 +49,7 @@ public class camera {
 		}
 		if (movement == "stop") {
 			Game.tora.y -= 4;
+			Game.tora.lastDir = "up";
 			Game.tora.speedX = 0;
 			Game.tora.speedY = 0;
 			Game.tora.moving = false;
